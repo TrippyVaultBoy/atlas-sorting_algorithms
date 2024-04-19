@@ -1,7 +1,9 @@
 #include "sort.h"
 
 /**
- *
+ * selection_sort- sorts an array with selection sort algorithm
+ * @array: input array
+ * @size: size of array
 */
 
 void selection_sort(int *array, size_t size)
@@ -29,7 +31,7 @@ void selection_sort(int *array, size_t size)
 			{
 				minimum = array[j];
 				swap = 1;
-				save_index = j;	
+				save_index = j;
 			}
 		}
 		if (swap == 1)

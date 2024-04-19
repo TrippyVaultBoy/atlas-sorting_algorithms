@@ -6,6 +6,8 @@
  * @lower: lower bound
  * @upper: upper bound
  * @size: array size
+ *
+ * returns: next partition
 */
 
 int partitioner(int *array, int lower, int upper, int size)

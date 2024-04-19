@@ -26,8 +26,8 @@ int partitioner(int *array, int lower, int upper)
 	}
 
 	temp = array[i + 1];
-	array[i + 1] = array[j];
-	array[j] = temp;
+	array[i + 1] = array[upper];
+	array[upper] = temp;
 
 	return (i + 1);
 }

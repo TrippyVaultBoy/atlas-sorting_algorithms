@@ -1,7 +1,11 @@
 #include "sort.h"
 
 /**
- *
+ * partitioner- uses the lomuto partition scheme
+ * @array: input array
+ * @lower: lower bound
+ * @upper: upper bound
+ * @size: array size
 */
 
 int partitioner(int *array, int lower, int upper, int size)
@@ -40,7 +44,11 @@ int partitioner(int *array, int lower, int upper, int size)
 }
 
 /**
- *
+ * quick_sort_help- helps the quick_sort function recursively
+ * @array: input array
+ * @lower: lower bound
+ * @upper: upper bound
+ * @size: size of array
 */
 
 void quick_sort_help(int *array, int lower, int upper, int size)
@@ -59,7 +67,9 @@ void quick_sort_help(int *array, int lower, int upper, int size)
 }
 
 /**
- *
+ * quick_sort- sorts an array with the quick sort algoritm
+ * @array: input array
+ * @size: size of array
 */
 
 void quick_sort(int *array, size_t size)

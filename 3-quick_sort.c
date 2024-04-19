@@ -4,7 +4,7 @@
  *
 */
 
-int partitioner(int *array, int lower, int upper)
+int partitioner(int *array, int lower, int upper, int size)
 {
 	int pivot;
 	int i;
@@ -12,24 +12,31 @@ int partitioner(int *array, int lower, int upper)
 	int temp;
 
 	pivot = array[upper];
-	i = lower - 1;
+	i = lower;
 
 	for (j = lower; j < upper; j++)
 	{
 		if (array[j] <= pivot)
 		{
-			i++;
 			temp = array[i];
 			array[i] = array[j];
 			array[j] = temp;
+			if (temp != array[i])
+			{
+				print_array(array, size);
+			}
+			i++;
 		}
 	}
 
-	temp = array[i + 1];
-	array[i + 1] = array[upper];
-	array[upper] = temp;
-
-	return (i + 1);
+	temp = array[i];
+	array[i] = array[j];
+	array[j] = temp;
+	if (temp != array[i])
+	{
+		print_array(array, size);
+	}
+	return (i);
 }
 
 /**
@@ -40,14 +47,14 @@ void quick_sort_help(int *array, int lower, int upper, int size)
 {
 	int pivot;
 
+	pivot = 0;
+
 	if (lower < upper)
 	{
-		pivot = partitioner(array, lower, upper);
+		pivot = partitioner(array, lower, upper, size);
 
 		quick_sort_help(array, lower, pivot - 1, size);
-		print_array(array, size);
 		quick_sort_help(array, pivot + 1, upper, size);
-		print_array(array, size);
 	}
 }
 

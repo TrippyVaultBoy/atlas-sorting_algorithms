@@ -39,17 +39,17 @@ void insertion_sort_list(listint_t **list)
 	listint_t *temp;
 	listint_t *back_node;
 
-    if (list == NULL || *list == NULL)
-    {
-        return;
-    }
+	if (list == NULL || *list == NULL)
+	{
+		return;
+	}
 
-    for (current = (*list)->next; current != NULL; current = temp)
+	for (current = (*list)->next; current != NULL; current = temp)
 	{
 		temp = current->next;
 		back_node = current->prev;
 
-		while(back_node != NULL && current->n < back_node->n)
+		while (back_node != NULL && current->n < back_node->n)
 		{
 			node_swap(list, &back_node, current);
 			print_list(*list);

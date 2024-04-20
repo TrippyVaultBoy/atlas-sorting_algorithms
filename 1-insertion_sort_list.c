@@ -33,7 +33,7 @@ void node_swap(listint_t **head, listint_t **node1, listint_t *node2)
 }
 
 /**
- * insertion_sort_list- sorts a doubly linked list with insertion sort algorithm
+ * insertion_sort_list- sorts a list with insertion sort algorithm
  * @list: pointer to input list
 */
 
